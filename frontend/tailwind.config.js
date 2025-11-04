@@ -1,0 +1,16 @@
+/** @type {import('tailwindcss').Config} */
+import forms from '@tailwindcss/forms';
+import lineClamp from '@tailwindcss/line-clamp';
+
+export default {
+  darkMode: 'class',
+  content: [
+    './index.html',
+    './src/**/*.{js,jsx,ts,tsx}',
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [forms, lineClamp],
+};
+
