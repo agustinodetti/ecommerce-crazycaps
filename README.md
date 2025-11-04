@@ -9,14 +9,14 @@ E-Commerce para el negocio de gorras CrazyCaps.
 cd backend
 npm install
 cp env.example .env  # Configura tus variables
-node server.js
+npm start
 ```
 
 ### Frontend
 ```bash
 cd frontend
 npm install
-npm start
+npm run dev
 ```
 
 ## 🔧 Variables de Entorno
