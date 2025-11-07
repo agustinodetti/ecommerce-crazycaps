@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+import { useAuth } from "../context/AuthContext";
 
 export default function Navbar() {
   const { cart } = useCart();
+  const { isAuthenticated } = useAuth();
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
@@ -40,9 +42,15 @@ export default function Navbar() {
               </span>
             )}
           </Link>
-          <Link to="/admin" className="hover:text-blue-700 dark:hover:text-blue-400">
-            Admin
-          </Link>
+          {isAuthenticated ? (
+            <Link to="/admin" className="hover:text-blue-700 dark:hover:text-blue-400">
+              Admin
+            </Link>
+          ) : (
+            <Link to="/login" className="hover:text-blue-700 dark:hover:text-blue-400">
+              Login
+            </Link>
+          )}
           <button
             onClick={toggleTheme}
             aria-label="Alternar tema"
