@@ -42,7 +42,8 @@ export default function Navbar() {
               </span>
             )}
           </Link>
-          {isAuthenticated ? (
+
+          {/* {isAuthenticated ? (
             <Link to="/admin" className="hover:text-blue-700 dark:hover:text-blue-400">
               Admin
             </Link>
@@ -50,7 +51,8 @@ export default function Navbar() {
             <Link to="/login" className="hover:text-blue-700 dark:hover:text-blue-400">
               Login
             </Link>
-          )}
+          )} */}
+          
           <button
             onClick={toggleTheme}
             aria-label="Alternar tema"

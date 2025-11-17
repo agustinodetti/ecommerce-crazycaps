@@ -1,4 +1,5 @@
 import { useCart } from "../context/CartContext";
+import { getFullImageUrl } from "../utils/image";
 
 export default function Cart() {
   const { cart, removeFromCart, clearCart } = useCart();
@@ -25,7 +26,7 @@ export default function Cart() {
               {cart.map((p) => (
                 <li key={p._id} className="px-4 py-3 flex items-center justify-between">
                   <div className="flex items-center gap-3 min-w-0">
-                    <img src={p.imageUrl} alt={p.name} className="w-12 h-12 rounded object-cover" />
+                    <img src={getFullImageUrl(p.imageUrl || (p.photos && p.photos[0]))} alt={p.name} className="w-12 h-12 rounded object-cover" />
                     <div className="min-w-0">
                       <p className="font-medium text-gray-800 dark:text-gray-100 truncate">{p.name}</p>
                       <p className="text-sm text-gray-600 dark:text-gray-300">${p.price}</p>
